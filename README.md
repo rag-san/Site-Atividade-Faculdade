@@ -46,4 +46,4 @@ Abra o projeto no VS Code
 
 Clique com o botão direito em index.html
 
-Escolha "Open with Live Server"
+Escolha "Open with Live Server"git 

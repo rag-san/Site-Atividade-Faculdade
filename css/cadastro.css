@@ -62,7 +62,7 @@
 
 .sobre-forms {
   color: #547507;
-  background: var(--cor-fundo) center/cover no-repeat;
+  background: center/cover no-repeat;
   margin-bottom: var(--space-2);
   padding: var(--space-4);
   position: relative;

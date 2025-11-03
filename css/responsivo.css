@@ -7,27 +7,35 @@
   --font-md: 1.25rem;
   --font-xs: 0.875rem;
   --font-xl: 2rem;
-  --space-1: 0.5rem;  /* 8px */
-  --space-2: 1rem;   /* 16px */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
 }
 
-/* 🛑 CORREÇÃO GLOBAL: Impede a barra de rolagem horizontal em toda a página */
+
 body {
-    overflow-x: hidden; 
-    color: var();
+  overflow-x: hidden;
+  color: var();
 }
 
 @media (max-width: 230px) {
-  h1 { font-size: var(--font-lg); }
-  h2 { font-size: var(--font-md); }
-  p { font-size: var(--font-xs); }
+  h1 {
+    font-size: var(--font-lg);
+  }
+
+  h2 {
+    font-size: var(--font-md);
+  }
+
+  p {
+    font-size: var(--font-xs);
+  }
 
   .menu-cont {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: var(--space-2) 4px; 
+    padding: var(--space-2) 4px;
   }
 
   .logo-inicial {
@@ -46,8 +54,8 @@ body {
   }
 
   .redes-sociais img {
-    width: 20px !important; 
-    height: 20px !important; 
+    width: 20px !important;
+    height: 20px !important;
   }
 
   #nav-links {
@@ -58,13 +66,14 @@ body {
   }
 
   .menu .menu-cont #nav-links a {
-    font-size: var(--font-xs) !important; 
-    font-weight: 500 !important; 
-    margin: 0 4px; 
-    white-space: nowrap; 
+    font-size: var(--font-xs) !important;
+    font-weight: 500 !important;
+    margin: 0 4px;
+    white-space: nowrap;
   }
- 
+
 }
+
 /* 📱 2. Celulares grandes / Tablets pequenos (481px a 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   h1 {
@@ -75,17 +84,16 @@ body {
     font-size: var(--font-lg);
   }
 
-  /* Menu: Layout horizontal tradicional (Deve funcionar bem aqui) */
   .menu-cont {
     display: flex;
-    justify-content: space-between; /* Mant#nav-links e redes separados */
+    justify-content: space-between;
     align-items: center;
     padding: var(--space-2);
   }
-    
+
   #nav-links {
     justify-content: center;
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
   .redes-sociais {
@@ -93,7 +101,6 @@ body {
     gap: var(--space-2);
   }
 
-  /* Caixas lado a lado (MANTIDO) */
   .contato-caixas,
   .time-equipe {
     justify-content: center;
@@ -110,11 +117,10 @@ body {
     display: none;
   }
 
-  /* Quando o menu estiver ativo (aberto) */
   #nav-links.active {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* links no topo e redes sociais no fim */
+    justify-content: space-between;
     align-items: center;
     gap: 35px;
     position: fixed;
@@ -129,13 +135,28 @@ body {
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
     animation: fadeIn 0.3s ease;
-    padding: 40px 0; /* espaçamento top e bottom */
+    padding: 40px 0;
     margin: 0;
   }
-  
+
   #nav-links.active a:first-child {
-  margin-top: 100px; /* move só o primeiro link pra baixo */
-}
+    margin-top: 100px;
+  }
+
+  #nav-links.active .menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    order: 0;
+
+  }
+
+  #nav-links.active .redes-sociais {
+    order: 2;
+
+    margin-top: auto;
+    padding-bottom: 40px;
+  }
 
   #nav-links a {
     color: #040000;
@@ -152,14 +173,13 @@ body {
     color: #0061e8;
   }
 
-  /* Redes sociais dentro do menu */
   #nav-links .redes-sociais {
     display: block;
     gap: 25px;
     justify-content: center;
-    margin-top: auto; 
+    margin-top: auto;
     padding-bottom: 40px;
-    
+
   }
 
   #nav-links .redes-sociais img {
@@ -173,39 +193,29 @@ body {
     transform: scale(1.2);
   }
 
-  /* Animação de entrada */
+
   @keyframes fadeIn {
     from {
       opacity: 0;
     }
+
     to {
       opacity: 1;
     }
   }
 
-  .hamburger {
-    z-index: 1100;
-    cursor: pointer;
-  }
-
-  .hamburger span {
+  #nav-links.active .btn-dark {
     display: block;
-    width: 28px;
-    height: 3px;
-    margin: 5px;
-    background: #0d2149;
-    border-radius: 2px;
-    transition: all 0.3s ease;
+    margin: 10px 0;
+    order: 1;
   }
 
-  .hamburger.open span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-  .hamburger.open span:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.open span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
+  #nav-links.active .btn-dark button {
+    width: 50px;
+    height: 50px;
+
+
+
   }
 }
 
@@ -213,12 +223,12 @@ body {
 
 /* 💻 3. Tablets médios (769px a 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
-  /* Menu: Reforça o alinhamento horizontal esperado */
+
   .menu-cont {
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
   }
-    
+
   #nav-links {
     flex-grow: 1;
     justify-content: center;
@@ -251,7 +261,7 @@ body {
 /* 🖥️ 5. Monitores grandes (1441px pra cima) */
 @media (min-width: 1441px) {
   body {
-    max-width: 100%; 
+    max-width: 100%;
     margin: 0 auto;
   }
 }
