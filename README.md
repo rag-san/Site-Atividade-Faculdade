@@ -36,3 +36,14 @@ O objetivo é divulgar projetos sociais na área da saúde, incentivar o volunta
 ```bash
 # No terminal, dentro da pasta do projeto:
 python -m http.server 8000
+
+Depois, acesse http://localhost:8000
+ no navegador.
+
+Opção 2 – Live Server (VS Code)
+
+Abra o projeto no VS Code
+
+Clique com o botão direito em index.html
+
+Escolha "Open with Live Server"
