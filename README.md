@@ -7,17 +7,17 @@ O objetivo é divulgar projetos sociais na área da saúde, incentivar o volunta
 ## 🧭 Estrutura do Projeto
 
 ├─ index.html # Página principal / container da SPA 
-|
+
 ├─ home.html # Página inicial / sobre a ONG
-|
+
 ├─ projeto.html # Página com projetos e voluntariado
-|
+
 ├─ /css # Folhas de estilo (layout, variáveis, responsividade)
-|
+
 ├─ /JS # Scripts da SPA e interações
-|
+
 ├─ /img # Imagens do site
-|
+
 └─ README.md
 
 
